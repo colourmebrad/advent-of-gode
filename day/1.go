@@ -13,7 +13,7 @@ func One(input []string) {
 		direction := string(instruction[0])
 		numberStr := string(instruction[1:])
 
-		fmt.Println(direction + ":" + numberStr)
+		fmt.Printf(direction + ":" + numberStr + " => ")
 
 		if by, err := strconv.Atoi(numberStr); err == nil {
 			if direction == "R" {
