@@ -1,11 +1,13 @@
 package day
 
 import (
+	"advent-of-gode/shared"
 	"fmt"
 	"strconv"
 )
 
-func One(input []string) {
+func OneOne() {
+	input := shared.GetPuzzleInput("1.txt")
 	var lockPosition = 50
 	zeroCount := 0
 
@@ -13,13 +15,13 @@ func One(input []string) {
 		direction := string(instruction[0])
 		numberStr := string(instruction[1:])
 
-		fmt.Printf(direction + ":" + numberStr + " => ")
+		fmt.Print(direction + ":" + numberStr + " => ")
 
 		if by, err := strconv.Atoi(numberStr); err == nil {
 			if direction == "R" {
-				lockPosition = increment(lockPosition, by)
+				lockPosition = oneOneIncrement(lockPosition, by)
 			} else {
-				lockPosition = decrement(lockPosition, by)
+				lockPosition = oneOneDecrement(lockPosition, by)
 			}
 
 			fmt.Printf("lockPosition is: %d\n", lockPosition)
@@ -36,7 +38,7 @@ func One(input []string) {
 }
 
 // there's probably a clever math way with modulus or some bullshit, but I minored in Drama
-func increment(lockPosition int, by int) int {
+func oneOneIncrement(lockPosition int, by int) int {
 	for i := 0; i < by; i++ {
 		if lockPosition == 99 {
 			lockPosition = 0
@@ -48,7 +50,7 @@ func increment(lockPosition int, by int) int {
 	return lockPosition
 }
 
-func decrement(lockPosition int, by int) int {
+func oneOneDecrement(lockPosition int, by int) int {
 	for i := 0; i < by; i++ {
 		if lockPosition == 0 {
 			lockPosition = 99

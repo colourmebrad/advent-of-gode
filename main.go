@@ -2,32 +2,30 @@ package main
 
 import (
 	"advent-of-gode/day"
-	"advent-of-gode/shared"
 	"fmt"
 	"os"
-	"strconv"
 )
 
 func main() {
-	var dayNum int = -1
-	var err error = nil
+	var exercise string = ""
 
 	if len(os.Args) > 1 {
-		if dayNum, err = strconv.Atoi(os.Args[1]); err != nil {
-			fmt.Printf("Argument '%s' is not a valid day number", os.Args[1])
-			return
-		}
+		exercise = os.Args[1]
 	} else {
-		fmt.Printf("Use \"go run main.go [1-12]\" for running the exercise for the specified day")
+		fmt.Printf("Use \"go run main.go [day].[part]\" for running an exercise")
 	}
 
-	input := shared.GetPuzzleInput()
-
-	switch dayNum {
-	case 1:
-		fmt.Printf("Running day 1")
-		day.One(input)
+	switch exercise {
+	case "1.1":
+		fmt.Printf("Running day 1.1")
+		day.OneOne()
+	case "1.2":
+		fmt.Printf("Running day 1.2")
+		day.OneTwo()
+	case "2":
+		fmt.Printf("Running day 2")
+		//day.Two()
 	default:
-		fmt.Printf("Day %d is not implemented yet", dayNum)
+		fmt.Printf("Exercise %s is not implemented yet", exercise)
 	}
 }
