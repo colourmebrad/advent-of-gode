@@ -17,7 +17,7 @@ func main() {
 	for _, instruction := range input {
 		//for j := 0; j < len(input); j++ {
 		direction := string(instruction[0])
-		numberStr := string(instruction[1:len(instruction)])
+		numberStr := string(instruction[1:])
 
 		fmt.Println(direction + ":" + numberStr)
 
