@@ -1,21 +1,15 @@
-package main
+package day
 
 import (
-	"advent-of-gode/internal"
 	"fmt"
 	"strconv"
-	"strings"
 )
 
-func main() {
-	input := getPuzzleInput()
-	fmt.Println(input)
-
+func One(input []string) {
 	var lockPosition = 50
 	zeroCount := 0
 
 	for _, instruction := range input {
-		//for j := 0; j < len(input); j++ {
 		direction := string(instruction[0])
 		numberStr := string(instruction[1:])
 
@@ -64,24 +58,4 @@ func decrement(lockPosition int, by int) int {
 	}
 
 	return lockPosition
-}
-
-func getPuzzleInput() []string {
-	// example input
-	//	s := `L68
-	//L30
-	//R48
-	//L5
-	//R60
-	//L55
-	//L1
-	//L99
-	//R14
-	//L82`
-
-	s := internal.ReadInput()
-
-	array := strings.Split(s, "\n")
-
-	return array
 }

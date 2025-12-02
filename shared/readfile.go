@@ -1,4 +1,4 @@
-package internal
+package shared
 
 import (
 	"fmt"
@@ -9,9 +9,9 @@ import (
 
 // yes this is from a google search, why do you ask?
 // I learned C-style file buffer reading decades ago, leave me alone!
-func ReadInput() string {
+func ReadFile(filename string) string {
 	// Attempt to open the file
-	file, err := os.Open("1.txt")
+	file, err := os.Open("data/" + filename)
 	if err != nil {
 		// Handle the error appropriately
 		fmt.Println("Error opening file:", err)
@@ -21,7 +21,6 @@ func ReadInput() string {
 	defer file.Close()
 
 	var sb strings.Builder
-	sb.Grow(20000)
 
 	// Create a buffer to hold the file's content
 	buffer := make([]byte, 1024) // Adjust buffer size as needed
