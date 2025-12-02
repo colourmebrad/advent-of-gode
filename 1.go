@@ -15,9 +15,10 @@ func main() {
 	var lockPosition = 50
 	zeroCount := 0
 
-	for j := 0; j < len(input); j++ {
-		direction := string(input[j][0])
-		numberStr := string(input[j][1:len(input[j])])
+	for _, instruction := range input {
+		//for j := 0; j < len(input); j++ {
+		direction := string(instruction[0])
+		numberStr := string(instruction[1:len(instruction)])
 
 		fmt.Println(direction + ":" + numberStr)
 
