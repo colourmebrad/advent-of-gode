@@ -17,13 +17,13 @@ func main() {
 
 	switch exercise {
 	case "1.1":
-		fmt.Printf("Running day 1.1")
+		fmt.Printf("Running day 1.1\n")
 		day.OneOne()
 	case "1.2":
-		fmt.Printf("Running day 1.2")
+		fmt.Printf("Running day 1.2\n")
 		day.OneTwo()
 	case "2.1":
-		fmt.Printf("Running day 2.1")
+		fmt.Printf("Running day 2.1\n")
 		day.TwoOne()
 	default:
 		fmt.Printf("Exercise %s is not implemented yet", exercise)
