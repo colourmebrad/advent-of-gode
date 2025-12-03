@@ -23,7 +23,7 @@ func main() {
 		fmt.Printf("Running day 1.2")
 		day.OneTwo()
 	case "2.1":
-		fmt.Printf("Running day 2")
+		fmt.Printf("Running day 2.1")
 		day.TwoOne()
 	default:
 		fmt.Printf("Exercise %s is not implemented yet", exercise)
