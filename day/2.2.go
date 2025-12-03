@@ -35,6 +35,9 @@ func hasRepeatedCycle(intString string) bool {
 		// 11 is valid
 		// 211 is not and 112 is not
 
+		// maybe here is where we want another loop?
+		// we basically have to take sequence and then ensure that the rest of the strong is ONLY 1+ loops of that sequence
+
 		// is there enough string left for another of this sequence?
 		nextSequenceStart := y + 1
 		nextSequenceEnd := y + 1 + len(sequence)
