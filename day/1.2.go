@@ -7,7 +7,7 @@ import (
 )
 
 func OneTwo() {
-	input := shared.GetPuzzleInput("1.txt")
+	input := shared.GetPuzzleInput("1.txt", "\n")
 	var lockPosition = 50
 	var zeroCount = 0
 	var newZeroCount = 0
