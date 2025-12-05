@@ -7,19 +7,7 @@ import (
 )
 
 func ThreeOne() {
-	/* 987654321111111
-	   811111111111119
-	   234234234234278
-	   818181911112111
-		 100100000010009
-		 100100000080709
-	*/
-
-	/*bank := "4122333122212322225322231334325214312232223232222412212214232124422231324324242122124222322242232333"
-	fmt.Printf("%s = %d\n", bank, getMaxJoltage(bank))
-	return*/
-
-	input := shared.GetPuzzleInput("3.debug.txt", "\n")
+	input := shared.GetPuzzleInput("3.txt", "\n")
 
 	totalJoltage := 0
 
@@ -52,14 +40,13 @@ func getMaxJoltage(bank string) int {
 		if thisDigit > firstDigit {
 			firstDigit = thisDigit
 			// grab the next digit as it's our new baseline second digit
-			i++
-			secondDigit, _ = strconv.Atoi(string(bank[i]))
+			secondDigit, _ = strconv.Atoi(string(bank[i+1]))
 		} else if thisDigit > secondDigit {
 			secondDigit = thisDigit
 		}
 	}
 
-	fmt.Printf("getMaxJoltage(%s) = %d\n", bank, firstDigit*10+secondDigit)
+	//fmt.Printf("getMaxJoltage(%s) = %d\n", bank, firstDigit*10+secondDigit)
 
 	return firstDigit*10 + secondDigit
 }
