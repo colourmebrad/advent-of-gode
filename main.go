@@ -34,6 +34,9 @@ func main() {
 	case "3.2":
 		fmt.Printf("Running day 3.2\n")
 		day.ThreeTwo()
+	case "4.1":
+		fmt.Printf("Running day 4.1\n")
+		day.FourOne()
 	default:
 		fmt.Printf("Exercise %s is not implemented yet", exercise)
 	}
