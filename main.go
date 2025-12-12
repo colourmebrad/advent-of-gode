@@ -40,6 +40,9 @@ func main() {
 	case "4.2":
 		fmt.Printf("Running day 4.2\n")
 		day.FourTwo()
+	case "5.1":
+		fmt.Printf("Running day 5.1\n")
+		day.FiveOne()
 	default:
 		fmt.Printf("Exercise %s is not implemented yet", exercise)
 	}
